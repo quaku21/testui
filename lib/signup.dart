@@ -23,25 +23,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
           Expanded(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
               child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Image(image: AssetImage('images/Group 4.png')),
-                  Image(image: AssetImage('images/Group 3.png')),
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Image(
+                        image: AssetImage('images/Group 4.png'),
+                      ),
+                      Image(
+                        image: AssetImage('images/Group 3.png'),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Image(
+                        image: AssetImage('images/logo.png'),
+                      ),
+                      Text(
+                        'Test UI',
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.w900),
+                      ),
+                    ],
+                  ),
                 ],
               ),
-              Center(
-                child: Row(
-                  children: const [
-                    Image(image: AssetImage('images/logo.png')),
-                    Text('Test UI'),
-                  ],
-                ),
-              ),
-            ],
-          )),
+            ),
+          ),
         ],
       ),
     );

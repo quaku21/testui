@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:test_ui/styles.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -11,17 +12,37 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: const [
-          Expanded(
-            child: Image(
-              image: AssetImage('images/Pictures.png'),
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            color: KColor1,
+            child: const Image(
+              image: AssetImage('images/welcomeimage.png'),
             ),
           ),
-          Expanded(child: Text('Sign Up')),
-        ],
-      ),
+        ),
+        Expanded(
+            child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Image(image: AssetImage('images/Group 4.png')),
+                Image(image: AssetImage('images/Group 3.png')),
+              ],
+            ),
+            Center(
+              child: Row(
+                children: const [
+                  Image(image: AssetImage('images/logo.png')),
+                  Text('Test UI'),
+                ],
+              ),
+            ),
+          ],
+        )),
+      ],
     );
   }
 }

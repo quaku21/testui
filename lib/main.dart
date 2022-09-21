@@ -2,9 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:testui/lecture_halls.dart';
 import 'package:testui/signin.dart';
 import 'package:testui/signup.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
+import 'user_details.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    ChangeNotifierProvider(
+        create: (context) => AllData(), child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +31,6 @@ class MyApp extends StatelessWidget {
         SignUpScreen.id: (context) => const SignUpScreen(),
         SignInScreen.id: (context) => const SignInScreen(),
         LectureHalls.id: (context) => const LectureHalls(),
-
       },
       home: const SignInScreen(),
     );

@@ -16,91 +16,164 @@ class _LectureHallsState extends State<LectureHalls> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Center(child: Text('TestUI',style: TextStyle(color: KColor1),)),),
+        title: const Center(
+            child: Text(
+          'TestUI',
+          style: TextStyle(color: KColor1),
+        )),
+      ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:[ Text('Lecture Halls'),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-            Container(
-              height: 100,
-              width: MediaQuery.of(context).size.width*0.3,
-              color: Colors.red,
-              child: Image(image: AssetImage('images/image(1).png'),),
-            ),  Container(
-              height: 100,
-              width: MediaQuery.of(context).size.width*0.3,
-              color: Colors.red,
-            ) , Container(
-              height: 100,
-              width: MediaQuery.of(context).size.width*0.3,
-              color: Colors.red,
-            )
-          ],),
-              SizedBox(height: 30,),
-              Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 100,
-                    width: MediaQuery.of(context).size.width*0.3,
-                    color: Colors.red,
-                  ),
-                  SizedBox(height: 20,),
-                  Container(
-                    height: 100,
-                    width: MediaQuery.of(context).size.width*0.3,
-                    color: Colors.red,
-                  ),
-                ],
-              ),
-              Container(
-                height: 220,
-                width: MediaQuery.of(context).size.width*0.3,
-                color: Colors.red,
-              ) ,     Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 100,
-                    width: MediaQuery.of(context).size.width*0.3,
-                    color: Colors.red,
-                  ),
-                  SizedBox(height: 20,),
-                  Container(
-                    height: 100,
-                    width: MediaQuery.of(context).size.width*0.3,
-                    color: Colors.red,
-                  ),
-                ],
-              ),
-            ],),
-              SizedBox(height: 30,),
-              Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                height: 100,
-                width: MediaQuery.of(context).size.width*0.3,
-                color: Colors.red,
-              ),  Container(
-                height: 100,
-                width: MediaQuery.of(context).size.width*0.3,
-                color: Colors.red,
-              ) , Container(
-                height: 100,
-                width: MediaQuery.of(context).size.width*0.3,
-                color: Colors.red,
-              )
-            ],)
-        ]),),
+          //      padding: const EdgeInsets.only(left: 300, right: 300),
+          child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Lecture Halls'),
+                Row(
+                  //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 120,
+                      //width: MediaQuery.of(context).size.width * 0.3,
+                      color: Colors.red,
+                      child: const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/image (3).png'),
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      width: 220,
+                      //width: MediaQuery.of(context).size.width * 0.3,
+                      color: Colors.red,
+                      child: const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/image (3).png'),
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      width: 120,
+                      //width: MediaQuery.of(context).size.width * 0.3,
+                      color: Colors.red,
+                      child: const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/image (3).png'),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 120,
+                          color: Colors.red,
+                          child: const Image(
+                            fit: BoxFit.fill,
+                            image: AssetImage('images/image (3).png'),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 120,
+                          color: Colors.red,
+                          child: const Image(
+                            fit: BoxFit.fill,
+                            image: AssetImage('images/image (3).png'),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      height: 220,
+                      width: 220,
+                      //  width: MediaQuery.of(context).size.width * 0.3,
+                      color: Colors.red,
+                      child: const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/image (3).png'),
+                      ),
+                    ),
+                    Column(
+                      //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 120,
+                          color: Colors.red,
+                          child: const Image(
+                            fit: BoxFit.fill,
+                            image: AssetImage('images/image (3).png'),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 120,
+                          color: Colors.red,
+                          child: const Image(
+                            fit: BoxFit.fill,
+                            image: AssetImage('images/image (3).png'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 120,
+                      //width: MediaQuery.of(context).size.width * 0.3,
+                      color: Colors.red,
+                      child: const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/image (3).png'),
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      width: 220,
+                      //width: MediaQuery.of(context).size.width * 0.3,
+                      color: Colors.red,
+                      child: const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/image (3).png'),
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      width: 120,
+                      //width: MediaQuery.of(context).size.width * 0.3,
+                      color: Colors.red,
+                      child: const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/image (3).png'),
+                      ),
+                    ),
+                  ],
+                )
+              ]),
+        ),
       ),
     );
   }

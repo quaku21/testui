@@ -45,29 +45,38 @@ class _LectureHallsState extends State<LectureHalls> {
                     ),
                     Row(
                       //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         CustomCard(
                           height: 100,
                           width: 120,
                           image: 'images/image (4).png',
+                          accomodation: '129',
+                          otherImages: 'images/image (4).png',
+                          name: 'Lecture Hall G1',
                           isBooked: false,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 20,
                         ),
                         CustomCard(
                           height: 100,
                           width: 220,
                           image: 'images/image(1).png',
+                          accomodation: '129',
+                          otherImages: 'images/image(1).png',
+                          name: 'Lecture Hall G2',
                           isBooked: true,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 20,
                         ),
                         CustomCard(
                           height: 100,
                           width: 120,
                           image: 'images/image (6).png',
+                          accomodation: '129',
+                          otherImages: 'images/image (6).png',
+                          name: 'Lecture Hall G1',
                           isBooked: true,
                         ),
                       ],
@@ -80,20 +89,26 @@ class _LectureHallsState extends State<LectureHalls> {
                       children: [
                         Column(
                           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: const [
                             CustomCard(
                               height: 100,
                               width: 120,
                               image: 'images/image (8).png',
+                              accomodation: '129',
+                              otherImages: 'images/image (8).png',
+                              name: 'Lecture Hall G1',
                               isBooked: true,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 20,
                             ),
                             CustomCard(
                               height: 100,
                               width: 120,
                               image: 'images/image (3).png',
+                              accomodation: '129',
+                              otherImages: 'images/image (3).png',
+                              name: 'Lecture Hall G1',
                               isBooked: true,
                             ),
                           ],
@@ -101,10 +116,13 @@ class _LectureHallsState extends State<LectureHalls> {
                         const SizedBox(
                           width: 20,
                         ),
-                        CustomCard(
+                        const CustomCard(
                           height: 220,
                           width: 220,
                           image: 'images/image (7).png',
+                          accomodation: '129',
+                          otherImages: 'images/image (7).png',
+                          name: 'Lecture Hall G1',
                           isBooked: true,
                         ),
                         const SizedBox(
@@ -112,20 +130,26 @@ class _LectureHallsState extends State<LectureHalls> {
                         ),
                         Column(
                           //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: const [
                             CustomCard(
                               height: 100,
                               width: 120,
                               image: 'images/image (7).png',
+                              accomodation: '129',
+                              otherImages: 'images/image (7).png',
+                              name: 'Lecture Hall G1',
                               isBooked: true,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 20,
                             ),
                             CustomCard(
                               height: 100,
                               width: 120,
                               image: 'images/image (5).png',
+                              accomodation: '129',
+                              otherImages: 'images/image (5).png',
+                              name: 'Lecture Hall G1',
                               isBooked: true,
                             ),
                           ],
@@ -137,29 +161,38 @@ class _LectureHallsState extends State<LectureHalls> {
                     ),
                     Row(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         CustomCard(
                           height: 100,
                           width: 120,
                           image: 'images/image (4).png',
+                          accomodation: '129',
+                          otherImages: 'images/image (4).png',
+                          name: 'Lecture Hall G1',
                           isBooked: true,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 20,
                         ),
                         CustomCard(
                           height: 100,
                           width: 220,
                           image: 'images/image (3).png',
+                          accomodation: '129',
+                          otherImages: 'images/image (3).png',
+                          name: 'Lecture Hall G1',
                           isBooked: true,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 20,
                         ),
                         CustomCard(
                           height: 100,
                           width: 120,
                           image: 'images/image (2).png',
+                          accomodation: '129',
+                          otherImages: 'images/image (2).png',
+                          name: 'Lecture Hall G1',
                           isBooked: true,
                         ),
                       ],

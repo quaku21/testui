@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testui/custom_widgets/materialbuttonclass.dart';
+import 'package:testui/lecture_halls.dart';
 import 'package:testui/signup.dart';
 import 'package:testui/styles.dart';
 
@@ -84,7 +85,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       minwidth: double.infinity,
                       buttoncolor: KColor1,
                       text: "Sign In",
-                      onpressed: () {},
+                      onpressed: () {
+                        Navigator.pushNamed(context, LectureHalls.id);
+                      },
                     ),
                   ),
                   Row(

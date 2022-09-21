@@ -21,6 +21,7 @@ class RoomStatus extends StatefulWidget {
 }
 
 class _RoomStatusState extends State<RoomStatus> {
+  late bool isBooked;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +39,7 @@ class _RoomStatusState extends State<RoomStatus> {
         padding: const EdgeInsets.all(60.0),
         child: Column(
           children: [
-            Text(
+            const Text(
               'Lecture Halls',
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             ),
@@ -55,7 +56,8 @@ class _RoomStatusState extends State<RoomStatus> {
                           image: AssetImage(widget.image),
                         ),
                         color: Colors.white70,
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10))),
                   ),
                 ),
                 Expanded(
@@ -74,7 +76,7 @@ class _RoomStatusState extends State<RoomStatus> {
                               ),
                               color: Colors.white70,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+                                  const BorderRadius.all(Radius.circular(10))),
                         ),
                         const SizedBox(
                           height: 20,
@@ -89,7 +91,7 @@ class _RoomStatusState extends State<RoomStatus> {
                               ),
                               color: Colors.white70,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+                                  const BorderRadius.all(Radius.circular(10))),
                         ),
                       ],
                     ),
@@ -152,25 +154,17 @@ class _RoomStatusState extends State<RoomStatus> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              // MaterialButton(
-                              //   minWidth: 400,
-                              //   height: 50,
-                              //   onPressed: () {},
-                              //   color: Colors.green,
-                              //   child: const Text(
-                              //     'Booked',
-                              //     style: TextStyle(
-                              //         color: Colors.white,
-                              //         fontSize: 20,
-                              //         fontWeight: FontWeight.bold),
-                              //   ),
-                              // ),
                               Container(
                                 height: 40,
                                 width: MediaQuery.of(context).size.width,
-                                color: const Color(0xFF1D973F),
-                                child: const Center(
-                                    child: Text('Booked',
+                                color: widget.isBooked
+                                    ? Color.fromARGB(255, 188, 13, 13)
+                                    : const Color(0xFF1D973F),
+                                child: Center(
+                                    child: Text(
+                                        widget.isBooked
+                                            ? 'Booked'
+                                            : 'No booking',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 20,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testui/lecture_halls.dart';
 import 'package:testui/signin.dart';
 import 'package:testui/signup.dart';
 
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         SignUpScreen.id: (context) => const SignUpScreen(),
-        SignInScreen.id: (context) => const SignInScreen()
+        SignInScreen.id: (context) => const SignInScreen(),
+        LectureHalls.id: (context) => const LectureHalls(),
+
       },
       home: const SignInScreen(),
     );

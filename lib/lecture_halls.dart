@@ -16,69 +16,20 @@ class _LectureHallsState extends State<LectureHalls> {
         elevation: 0,
         backgroundColor: Colors.white,
         title: Center(child: Text('TestUI')),),
-      body: Container(
-        padding: EdgeInsets.all(30),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:[ Text('TestUI'),
-        Row(
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(30),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-          Container(
-            height: 100,
-            width: MediaQuery.of(context).size.width*0.3,
-            color: Colors.red,
-          ),  Container(
-            height: 100,
-            width: MediaQuery.of(context).size.width*0.3,
-            color: Colors.red,
-          ) , Container(
-            height: 100,
-            width: MediaQuery.of(context).size.width*0.3,
-            color: Colors.red,
-          )
-        ],),Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 100,
-                  width: MediaQuery.of(context).size.width*0.3,
-                  color: Colors.red,
-                ),Container(
-                  height: 100,
-                  width: MediaQuery.of(context).size.width*0.3,
-                  color: Colors.red,
-                ),
-              ],
-            ),
-            Container(
-              height: 220,
-              width: MediaQuery.of(context).size.width*0.3,
-              color: Colors.red,
-            ) ,   Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 100,
-                  width: MediaQuery.of(context).size.width*0.3,
-                  color: Colors.red,
-                ),Container(
-                  height: 100,
-                  width: MediaQuery.of(context).size.width*0.3,
-                  color: Colors.red,
-                ),
-              ],
-            ),
-          ],),Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+            children:[ Text('TestUI'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
             Container(
               height: 100,
               width: MediaQuery.of(context).size.width*0.3,
               color: Colors.red,
+              child: Image(image: AssetImage(''),),
             ),  Container(
               height: 100,
               width: MediaQuery.of(context).size.width*0.3,
@@ -88,8 +39,68 @@ class _LectureHallsState extends State<LectureHalls> {
               width: MediaQuery.of(context).size.width*0.3,
               color: Colors.red,
             )
-          ],)
-      ]),),
+          ],),
+              SizedBox(height: 30,),
+              Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width*0.3,
+                    color: Colors.red,
+                  ),
+                  SizedBox(height: 20,),
+                  Container(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width*0.3,
+                    color: Colors.red,
+                  ),
+                ],
+              ),
+              Container(
+                height: 220,
+                width: MediaQuery.of(context).size.width*0.3,
+                color: Colors.red,
+              ) ,     Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width*0.3,
+                    color: Colors.red,
+                  ),
+                  SizedBox(height: 20,),
+                  Container(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width*0.3,
+                    color: Colors.red,
+                  ),
+                ],
+              ),
+            ],),
+              SizedBox(height: 30,),
+              Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 100,
+                width: MediaQuery.of(context).size.width*0.3,
+                color: Colors.red,
+              ),  Container(
+                height: 100,
+                width: MediaQuery.of(context).size.width*0.3,
+                color: Colors.red,
+              ) , Container(
+                height: 100,
+                width: MediaQuery.of(context).size.width*0.3,
+                color: Colors.red,
+              )
+            ],)
+        ]),),
+      ),
     );
   }
 }

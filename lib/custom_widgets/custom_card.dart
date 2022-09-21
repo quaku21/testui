@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testui/room_status.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard(
@@ -6,18 +7,36 @@ class CustomCard extends StatelessWidget {
       required this.image,
       required this.isBooked,
       required this.width,
-      required this.height})
+      required this.height,
+      required this.name,
+      required this.accomodation,
+      required this.otherImages})
       : super(key: key);
 
   final String image;
   final bool isBooked;
   final double width;
   final double height;
+  final String name;
+  final String accomodation;
+  final String otherImages;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (() {}),
+      onTap: (() {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => RoomStatus(
+                    accomodation: accomodation,
+                    isBooked: isBooked,
+                    name: name,
+                    image: image,
+                    otherImages: otherImages,
+                  )),
+        );
+      }),
       child: Stack(
         children: [
           Container(

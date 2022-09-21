@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:testui/custom_widgets/materialbuttonclass.dart';
 import 'package:testui/lecture_halls.dart';
@@ -13,6 +16,9 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  late String _email, _password;
+  bool _isPasswordVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +70,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 130.0, vertical: 10),
                     child: TextFormField(
+                      onChanged: (email) {
+                        _email = email.trim();
+                      },
                       decoration: const InputDecoration(
                         hintText: "Email",
                       ),
@@ -73,8 +82,23 @@ class _SignInScreenState extends State<SignInScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 130.0, vertical: 10),
                     child: TextFormField(
-                      decoration: const InputDecoration(
+                      onChanged: (password) {
+                        _password = password.trim();
+                      },
+                      obscureText: !_isPasswordVisible,
+                      decoration: InputDecoration(
                         hintText: "Password",
+                        suffixIcon: IconButton(
+                            icon: _isPasswordVisible
+                                ? const Icon(
+                                    Icons.visibility,
+                                  )
+                                : const Icon(Icons.visibility_off),
+                            onPressed: () {
+                              setState(() {
+                                _isPasswordVisible = !_isPasswordVisible;
+                              });
+                            }),
                       ),
                     ),
                   ),
@@ -85,8 +109,38 @@ class _SignInScreenState extends State<SignInScreen> {
                       minwidth: double.infinity,
                       buttoncolor: KColor1,
                       text: "Sign In",
-                      onpressed: () {
-                        Navigator.pushNamed(context, LectureHalls.id);
+                      onpressed: () async {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return const Center(
+                                  child: CircularProgressIndicator());
+                            });
+                        await FirebaseAuth.instance
+                            .signInWithEmailAndPassword(
+                                email: _email, password: _password)
+                            .then((value) {
+                          Navigator.pushReplacementNamed(
+                              context, LectureHalls.id);
+                        }).catchError((error) {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return Material(
+                                  child: ScaffoldMessenger(
+                                    child: Center(
+                                      child: Text(
+                                        error.toString(),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              });
+                          Future.delayed(const Duration(seconds: 2), () {
+                            Navigator.pop(context);
+                            Navigator.pop(context);
+                          });
+                        });
                       },
                     ),
                   ),
@@ -98,7 +152,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, SignUpScreen.id);
+                          Navigator.pushReplacementNamed(
+                              context, SignUpScreen.id);
                         },
                         child: const Text(
                           "Sign up",

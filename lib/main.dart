@@ -6,9 +6,18 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'user_details.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyDrHXR97v0r-l-nUMezeSPYHzIY6Sl0dUU",
+      appId: "1:340120392837:web:93927493b1877fd27605ec",
+      messagingSenderId: "340120392837",
+      projectId: "testui-eb982",
+      storageBucket: "testui-eb982.appspot.com",
+    ),
+  );
   runApp(
     ChangeNotifierProvider(
         create: (context) => AllData(), child: const MyApp()),

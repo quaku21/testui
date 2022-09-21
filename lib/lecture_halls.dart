@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testui/styles.dart';
 
 class LectureHalls extends StatefulWidget {
   const LectureHalls({Key? key}) : super(key: key);
@@ -15,13 +16,13 @@ class _LectureHallsState extends State<LectureHalls> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Center(child: Text('TestUI')),),
+        title: Center(child: Text('TestUI',style: TextStyle(color: KColor1),)),),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:[ Text('TestUI'),
+            children:[ Text('Lecture Halls'),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -29,7 +30,7 @@ class _LectureHallsState extends State<LectureHalls> {
               height: 100,
               width: MediaQuery.of(context).size.width*0.3,
               color: Colors.red,
-              child: Image(image: AssetImage(''),),
+              child: Image(image: AssetImage('images/image(1).png'),),
             ),  Container(
               height: 100,
               width: MediaQuery.of(context).size.width*0.3,

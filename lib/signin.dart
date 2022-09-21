@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:testui/custom_widgets/materialbuttonclass.dart';
-import 'package:testui/signin.dart';
+import 'package:testui/signup.dart';
 import 'package:testui/styles.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
-  static const String id = "SignUpScreen";
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({Key? key}) : super(key: key);
+  static const String id = "SignInScreen";
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,23 +56,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 130.0, vertical: 10),
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: "First Name",
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 130.0, vertical: 10),
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: "Other Names",
-                      ),
-                    ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
@@ -94,19 +79,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 130.0, vertical: 10),
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: "ID",
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 130.0),
+                        horizontal: 130.0, vertical: 20),
                     child: MaterialButtonClass(
                       minwidth: double.infinity,
                       buttoncolor: KColor1,
-                      text: "Sign Up",
+                      text: "Sign In",
                       onpressed: () {},
                     ),
                   ),
@@ -114,14 +91,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Already have an account",
+                        "Don't have an account?",
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, SignInScreen.id);
+                          Navigator.pushNamed(context, SignUpScreen.id);
                         },
                         child: const Text(
-                          "Sign In",
+                          "Sign up",
                           style: TextStyle(color: KColor1),
                         ),
                       )

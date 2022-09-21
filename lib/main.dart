@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testui/signin.dart';
 import 'package:testui/signup.dart';
 
 void main() {
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SignUpScreen(),
+      routes: {
+        SignUpScreen.id: (context) => const SignUpScreen(),
+        SignInScreen.id: (context) => const SignInScreen()
+      },
+      home: const SignInScreen(),
     );
   }
 }

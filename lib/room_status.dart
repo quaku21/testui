@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testui/booking_details.dart';
 import 'package:testui/styles.dart';
 
 class RoomStatus extends StatefulWidget {
@@ -158,14 +159,14 @@ class _RoomStatusState extends State<RoomStatus> {
                                 height: 40,
                                 width: MediaQuery.of(context).size.width,
                                 color: widget.isBooked
-                                    ? Color.fromARGB(255, 188, 13, 13)
+                                    ? const Color.fromARGB(255, 188, 13, 13)
                                     : const Color(0xFF1D973F),
                                 child: Center(
                                     child: Text(
                                         widget.isBooked
                                             ? 'Booked'
                                             : 'No booking',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold))),
@@ -210,11 +211,14 @@ class _RoomStatusState extends State<RoomStatus> {
                               MaterialButton(
                                 minWidth: 400,
                                 height: 50,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, BookingDetails.id);
+                                },
                                 color: const Color(0xFF3252DF),
-                                child: const Text(
-                                  'Overide Booking',
-                                  style: TextStyle(
+                                child: Text(
+                                  widget.isBooked ? 'override' : 'Book Room',
+                                  style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),

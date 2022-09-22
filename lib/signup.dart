@@ -126,19 +126,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               _password = password.trim();
                             },
                             decoration: InputDecoration(
-                                hintText: "Password",
-                                suffixIcon: IconButton(
-                                    icon: _isPasswordVisible
-                                        ? const Icon(
-                                            Icons.visibility,
-                                          )
-                                        : const Icon(Icons.visibility_off),
-                                    onPressed: () {
-                                      setState(() {
-                                        _isPasswordVisible =
-                                            !_isPasswordVisible;
-                                      });
-                                    })),
+                              hintText: "Password",
+                              suffixIcon: IconButton(
+                                  icon: _isPasswordVisible
+                                      ? const Icon(
+                                          Icons.visibility,
+                                        )
+                                      : const Icon(Icons.visibility_off),
+                                  onPressed: () {
+                                    setState(() {
+                                      _isPasswordVisible = !_isPasswordVisible;
+                                    });
+                                  }),
+                            ),
                           ),
                         ),
                         Padding(
@@ -210,8 +210,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         return const Material(
                                           child: ScaffoldMessenger(
                                             child: Center(
-                                              child:
-                                                  Text("Sign up Successful!"),
+                                              child: Text(
+                                                  "Sign up Successful! Proceed to the Login screen and login with your email and password"),
                                             ),
                                           ),
                                         );
@@ -219,10 +219,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   Future.delayed(const Duration(seconds: 3),
                                       () {
                                     Navigator.pushReplacementNamed(
-                                        context, LectureHalls.id);
-                                    print("Done!");
+                                        context, SignUpScreen.id);
                                   });
                                   //handle errors later
+                                }).catchError((error) {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return Material(
+                                          child: ScaffoldMessenger(
+                                            child: Center(
+                                              child: Text(
+                                                error.toString(),
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      });
+                                  Future.delayed(const Duration(seconds: 2),
+                                      () {
+                                    Navigator.pop(context);
+                                    Navigator.pop(context);
+                                  });
                                 });
                               });
                               //push from provider to database then sign up the user with email and password

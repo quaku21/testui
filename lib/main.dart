@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:testui/lecture_halls.dart';
-import 'package:testui/room_status.dart';
 import 'package:testui/signin.dart';
 import 'package:testui/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -8,7 +7,6 @@ import 'package:provider/provider.dart';
 import 'user_details.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: const FirebaseOptions(

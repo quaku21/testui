@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testui/room_status.dart';
 
-class CustomCard extends StatelessWidget {
+class CustomCard extends StatefulWidget {
   const CustomCard(
       {Key? key,
       required this.image,
@@ -22,35 +22,46 @@ class CustomCard extends StatelessWidget {
   final String otherImages;
 
   @override
+  State<CustomCard> createState() => _CustomCardState();
+}
+
+class _CustomCardState extends State<CustomCard> {
+  bool isHover = false;
+  @override
   Widget build(BuildContext context) {
     return InkWell(
+      onHover: (val) {
+        setState(() {
+          isHover = val;
+        });
+      },
       onTap: (() {
         Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) => RoomStatus(
-                    accomodation: accomodation,
-                    isBooked: isBooked,
-                    name: name,
-                    image: image,
-                    otherImages: otherImages,
+                    accomodation: widget.accomodation,
+                    isBooked: widget.isBooked,
+                    name: widget.name,
+                    image: widget.image,
+                    otherImages: widget.otherImages,
                   )),
         );
       }),
       child: Stack(
         children: [
           Container(
-            height: height,
-            width: width,
+            height: widget.height,
+            width: widget.width,
             //width: MediaQuery.of(context).size.width * 0.3,
             color: Colors.red,
             child: Image(
               fit: BoxFit.fill,
-              image: AssetImage(image),
+              image: AssetImage(widget.image),
             ),
           ),
           Positioned(
-            left: width - 30,
+            left: widget.width - 30,
             child: Container(
               height: 20,
               width: 30,
@@ -62,7 +73,8 @@ class CustomCard extends StatelessWidget {
                 padding: const EdgeInsets.all(4.0),
                 child: CircleAvatar(
                     radius: 2,
-                    backgroundColor: isBooked ? Colors.red : Colors.green),
+                    backgroundColor:
+                        widget.isBooked ? Colors.red : Colors.green),
               ),
             ),
           )

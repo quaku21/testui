@@ -118,13 +118,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_cube:
-    dependency: transitive
-    description:
-      name: flutter_cube
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.6"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -198,13 +191,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  panorama:
-    dependency: "direct main"
-    description:
-      name: panorama
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.2"
   path:
     dependency: transitive
     description:
